@@ -1,0 +1,5 @@
+pl-4 border-t border-dark-900 -- class td
+
+[<selenium.webdriver.remote.webelement.WebElement (session="ef6bd65a287280a525e374f4cbc1c4d4", element="cc0fadf2-bd03-46f4-9e0c-91786eaa09f3")>,
+ <selenium.webdriver.remote.webelement.WebElement (session="ef6bd65a287280a525e374f4cbc1c4d4", element="317564c6-9ecb-4bec-a68b-3c281ba24245")>,
+ <selenium.webdriver.remote.webelement.WebElement (session="ef6bd65a287280a525e374f4cbc1c4d4", element="430f1cba-321b-414c-9027-d8ca32eddaf0")>]
