@@ -25,6 +25,11 @@ driver.get('https://app.sushi.com/analytics/pools?chainId=56')
 # GET NUMBER OF POOLS
 # pools_span = driver.find_element(By.XPATH,"/html/body/div[1]/div/main/main/div/div/div[2]/div[4]/div[1]/span[2]")
 # pools = int(pools_span.text.split()[-1])
+
+# AVALANCHE
+# pools = 306
+
+# BSC
 pools = 1617
 print(pools)
 
