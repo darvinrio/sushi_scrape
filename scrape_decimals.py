@@ -91,8 +91,12 @@ for pool in pool_df.iterrows() :
     token2_address = pool[1].TOKEN2_ADDRESS
 
     # print(decimal_df[decimal_df['TOKEN_ADDRESS']==token1_address].reset_index().DECIMALS[0])
-    token1_decimal = decimal_df[decimal_df['TOKEN_ADDRESS']==token1_address].reset_index().DECIMALS[0]
-    token2_decimal = decimal_df[decimal_df['TOKEN_ADDRESS']==token2_address].reset_index().DECIMALS[0]
+    try:
+        token1_decimal = decimal_df[decimal_df['TOKEN_ADDRESS']==token1_address].reset_index().DECIMALS[0]
+        token2_decimal = decimal_df[decimal_df['TOKEN_ADDRESS']==token2_address].reset_index().DECIMALS[0]
+    except:
+        token1_decimal = None
+        token2_decimal = None
 
     # APPEND TO DATAFRAME
     df.loc[len(df.index)] = [pool_name, pool_address, token1_name, token2_name, token1_address, token2_address, token1_decimal, token2_decimal] 

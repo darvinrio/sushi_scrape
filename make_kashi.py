@@ -1,7 +1,9 @@
 import pandas as pd 
 
-kashi_df = pd.read_csv('out/kashi_avax.csv')
-pools_df = pd.read_csv('out/avalanche_final.csv')
+# kashi_df = pd.read_csv('out/kashi_avax.csv')
+# pools_df = pd.read_csv('out/avalanche_final.csv')
+kashi_df = pd.read_csv('out/kashi_bsc.csv')
+pools_df = pd.read_csv('out/bsc_final.csv')
 
 token1_series = pools_df[['TOKEN1_NAME','TOKEN1_ADDRESS','TOKEN1_DECIMALS']]
 token2_series = pools_df[['TOKEN2_NAME','TOKEN2_ADDRESS','TOKEN2_DECIMALS']]
@@ -9,7 +11,8 @@ token1_series.columns = ['TOKEN_NAME','ADDRESS','DECIMALS']
 token2_series.columns = ['TOKEN_NAME','ADDRESS','DECIMALS']
 
 tokens = pd.concat([token1_series,token2_series])
-tokens.loc[len(tokens.index)] = ['WETH','0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab', 18]
+# tokens.loc[len(tokens.index)] = ['WETH','0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab', 18]
+tokens.loc[len(tokens.index)] = ['CAKE','0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82', 18]
 
 
 df = pd.DataFrame(
@@ -48,4 +51,5 @@ for row in kashi_df.iterrows() :
 
     df.loc[len(df.index)] = [pair_name, pair_address, asset_name, collateral_name, asset_address, collateral_address, asset_decimal, collateral_decimal] 
 
-df.to_csv('kashi_avax_final.csv')
+# df.to_csv('kashi_avax_final.csv')
+df.to_csv('kashi_bsc_final.csv')
